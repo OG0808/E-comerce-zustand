@@ -3,9 +3,10 @@ import useFetch from "../hooks/useFetch";
 import useCartStore from "../store/cartStore";
 import "../style/products.css"
 import useCategory from "../store/useCategory";
+import Cart from "./Cart";
 
 const Products = () => {
-  const { addItem, cartProducts } = useCartStore();
+  const { addItem } = useCartStore();
 
   const { category } = useCategory()
 
@@ -23,6 +24,9 @@ const Products = () => {
       getUrl();
     }
   }, [category]);
+
+
+  
   
        
 
@@ -46,6 +50,7 @@ const Products = () => {
           </li>
         ))}
       </ul>
+      <Cart/>
     </div>
   );
 };
