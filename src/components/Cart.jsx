@@ -3,7 +3,7 @@ import useCartStore from "../store/cartStore";
 import "../style/cart.css";
 import useShowcart from "../store/cartshowStore";
 const Cart = () => {
-  const { Cart } = useShowcart();
+  const { Cart, showCart } = useShowcart();
   const {
     clearCart,
     cartProducts,
@@ -21,7 +21,10 @@ const Cart = () => {
             Empty cart
           </button>
         ) : (
-          <span className="cart__empty">Cart is empty</span>
+           <div className="cart__close">
+             <span className="cart__empty">Cart is empty</span>
+            <img onClick={showCart} src="./src/assets/icon-close.svg" alt="" />
+           </div>
         )}
         <ul className="cart__list">
           {cartProducts.map((product) => (
@@ -68,6 +71,9 @@ const Cart = () => {
             </li>
           ))}
         </ul>
+
+        <div className="cart__totalPriceAndCheck">
+
         {totalPrice ? (
           <button className="cart__button--Checkout">Checkout</button>
         ) : (
@@ -78,6 +84,7 @@ const Cart = () => {
         ) : (
           ""
         )}
+        </div>
       </section>
     </div>
   );

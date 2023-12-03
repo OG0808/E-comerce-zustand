@@ -6,13 +6,27 @@ import useShowcart from "../store/cartshowStore";
 import useCartStore from "../store/cartStore";
 
 const Navbar = () => {
+  const over = () => window.innerWidth < 817;
+
+  const [overview, setOver] = useState(over);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setOver(over);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const url = "https://fakestoreapi.com/products/categories";
   const [data, getApi] = useFetch(url);
   const { newCategory } = useCategory();
-  const { showCart} = useShowcart();
-  const {
-    cartProducts,
-  } = useCartStore();
+  const { showCart, showMenu, Onmenu } = useShowcart();
+  const { cartProducts } = useCartStore();
   const [cantidad, setCantidad] = useState();
 
   useEffect(() => {
@@ -30,8 +44,11 @@ const Navbar = () => {
   return (
     <section className="navbar">
       <nav className="navbar__nav">
-        <span className="navbar__title">Productos</span>
-        <ul className="navbar__list">
+        <span className="navbar__title">
+         {overview ? <img onClick={showMenu} src="./src/assets/icon-menu.svg" alt="" /> : ""}
+          Productos
+        </span>
+        <ul className={Onmenu ? "navbar__list" : "navbar__listoff"}>
           {data.map((category) => (
             <li
               onClick={() => {

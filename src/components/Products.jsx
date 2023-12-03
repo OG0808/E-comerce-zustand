@@ -3,7 +3,7 @@ import useFetch from "../hooks/useFetch";
 import useCartStore from "../store/cartStore";
 import "../style/products.css"
 import useCategory from "../store/useCategory";
-import Cart from "./Cart";
+
 
 const Products = () => {
   const { addItem } = useCartStore();
@@ -50,7 +50,7 @@ const Products = () => {
           </li>
         ))}
       </ul>
-      <Cart/>
+      
     </div>
   );
 };
