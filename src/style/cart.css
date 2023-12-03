@@ -93,12 +93,26 @@
 
 .cart__empty {
   padding: 10px;
-
   flex-shrink: 0;
   border-radius: 10px;
   background: #ff7e1b;
   box-shadow: 0px 20px 50px -20px #ff7e1b;
   color: #fff;
+  font-family: Kumbh Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart__isempty{
+  padding: 10px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0px 20px 50px -20px #ff7e1b;
+  color: #000000;
   font-family: Kumbh Sans;
   font-size: 16px;
   font-style: normal;
