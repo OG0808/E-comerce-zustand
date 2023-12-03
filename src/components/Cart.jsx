@@ -23,7 +23,7 @@ const Cart = () => {
         ) : (
            <div className="cart__close">
              <span className="cart__empty">Cart is empty</span>
-            <img onClick={showCart} src="./src/assets/icon-close.svg" alt="" />
+            <img onClick={showCart} src="./icon-close.svg" alt="" />
            </div>
         )}
         <ul className="cart__list">
