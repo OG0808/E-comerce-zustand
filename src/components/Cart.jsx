@@ -55,13 +55,13 @@ const Cart = () => {
                     className="cart__moreproduct"
                     onClick={() => decreaseItem(product.id)}
                   >
-                    less
+                   <img src="./icon-minus.svg" alt="" />
                   </button>
                   <button
                     className="cart__leesproduct"
                     onClick={() => addItem(product)}
                   >
-                    More
+                     <img src="./icon-plus.svg" alt="" />
                   </button>
                   <span className="cart__quantity">
                     Amount {product.quantity}

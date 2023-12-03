@@ -45,7 +45,7 @@ const Navbar = () => {
     <section className="navbar">
       <nav className="navbar__nav">
         <span className="navbar__title">
-         {overview ? <img onClick={showMenu} src="./src/assets/icon-menu.svg" alt="" /> : ""}
+         {overview ? <img onClick={showMenu} src="./icon-menu.svg" alt="" /> : ""}
           Productos
         </span>
         <ul className={Onmenu ? "navbar__list" : "navbar__listoff"}>
@@ -63,7 +63,7 @@ const Navbar = () => {
         </ul>
         <span onClick={showCart} className="nabvar__cart">
           <span className="cart__cuantityProducts">{cantidad}</span>
-          <img src="./src/assets/icon-cart.svg" alt="" />
+          <img src="./icon-cart.svg" alt="" />
         </span>
       </nav>
     </section>
